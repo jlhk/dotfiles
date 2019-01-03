@@ -2,7 +2,7 @@
 Setup
 * Bar: slstatus
 * Program launcher: dmenu
-* Text editor: Vim
-* Terminal emulator: st (Suckless/simple terminal)
+* Text editor: vim
+* Terminal emulator: st
 * Window manager: dwm
 * Shell: bash
