@@ -36,7 +36,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "st-256color",    NULL,       NULL,     1 << 0,        0,           1 },
-    { "Firefox",        NULL,       NULL,     1 << 1,        0,           1 },
+    { "Firefox-esr",    NULL,       NULL,     1 << 1,        0,           1 },
     { "VirtualBox",     NULL,       NULL,     1 << 5,        0,          -1 },
 	{ "Spotify",        NULL,       NULL,     1 << 9,        0,          -1 },
 
