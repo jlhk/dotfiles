@@ -20,8 +20,8 @@ static const char red[]		= "#cc241d";
 static const char *colors[][3]      = {
 	/*               fg         bg			border   */
 	[SchemeNorm] =	{ fg,		bg0_h,		bg0_h },
-	[SchemeSel]	 =	{ fg,		bg,			yellow },
-	[SchemeWarn] =	{ bg0_h,	yellow,		red  },
+	[SchemeSel]	 =	{ bg0_h,	yellow,		yellow },
+	[SchemeWarn] =	{ bg0_h,	red,		yellow  },
 	[SchemeUrgent]= { bg0_h,	red,		yellow  },
 
 };
@@ -68,8 +68,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg0_h, "-nf", fg, "-sb", bg, "-sf", fg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg0_h, "-nf", fg, "-sb", yellow, "-sf", bg0_h, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *lockcmd[]  = { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -105,6 +106,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	{ MODKEY|ShiftMask,             XK_l,      quit,           {.v = lockcmd} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
