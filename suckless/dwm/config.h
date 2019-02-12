@@ -106,7 +106,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_l,      quit,           {.v = lockcmd} },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
