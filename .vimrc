@@ -29,6 +29,7 @@ let mapleader = ','
 set number
 set relativenumber
 set showmatch
+set autowrite "Autosave when :make
 
 set tabstop=4
 set softtabstop=4
