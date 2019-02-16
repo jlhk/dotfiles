@@ -14,8 +14,11 @@ feh --bg-fill /home/jl/Pictures/wallpapers/citylights.jpg
 # Load nvidia settings
 nvidia-settings -l
 
-# Start statusbar
-slstatus &
+# Statusbar
+while true; do
+        xsetroot -name "$(echo ^c#689d6a^VOL^d^ $(amixer get Master | awk '$0~/%/{print $5}' | tail -1 | tr -d '[]') :: ^c#458588^CPU^d^ $(acpi -t | awk '{print $4}')°C :: ^c#d79921^BAT0^d^ $(cat /sys/class/power_supply/BAT0/capacity)% :: ^c#d79921^BAT1^d^ $(cat /sys/class/power_supply/BAT1/capacity)% :: $(date +"%A %F %R"))"
+        sleep 1s
+done &
 
 # Autostart programs
 firefox &
