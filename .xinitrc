@@ -16,7 +16,7 @@ nvidia-settings -l
 
 # Statusbar
 while true; do
-        xsetroot -name "$(echo ^c#689d6a^VOL^d^ $(amixer get Master | awk '$0~/%/{print $4}' | tail -1 | tr -d '[]') :: ^c#458588^CPU^d^ $(acpi -t | awk '{print $4}')°C :: ^c#d79921^BAT^d^ $(if grep -Fq "Charging" /sys/class/power_supply/BAT0/status; then echo "+";fi)$(cat /sys/class/power_supply/BAT0/capacity)% :: $(date +"%A %F %R"))        "
+        xsetroot -name "$(echo ^c#689d6a^VOL^d^ $(amixer get Master | if grep -Fq off; then echo MUTED; else amixer get Master | awk '$0~/%/{print $4}' | tail -1 | tr -d '[]'; fi) :: ^c#458588^CPU^d^ $(acpi -t | awk '{print $4}')°C :: ^c#d79921^BAT^d^ $(if grep -Fq "Charging" /sys/class/power_supply/BAT0/status; then echo "+";fi)$(cat /sys/class/power_supply/BAT0/capacity)% :: $(date +"%A %F %R"))        "
         sleep 1s
 done &
 
