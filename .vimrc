@@ -5,15 +5,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " PLUGINS
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'bitc/vim-bad-whitespace'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-surround'
+Plugin 'tmsvg/pear-tree'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -46,33 +39,13 @@ vnoremap < <gv
 set incsearch
 set smartcase
 
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.sh match BadWhitespace /\s\+$/
-
-let g:NERDSpaceDelims = 1
-let g:NERDAltDelims_python = 1
-let g:NERDTrimTrailingWhitespace = 1
-
 " Return to the same line you left off at
-	augroup line_return
-		au!
-		au BufReadPost *
-			\ if line("'\"") > 0 && line("'\"") <= line("$") |
-			\	execute 'normal! g`"zvzz' |
-			\ endif
+augroup line_return
+        au!
+        au BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \       execute 'normal! g`"zvzz' |
+                \ endif
 augroup END
 
-" gcc compile and run - if name = test.c -> %< = test
-" F4 -> compile | F5 -> compile and run
-map <F4> :w <CR> :!clear && gcc % -o %< <CR>
-map <F5> :w <CR> :!clear && gcc % -o %< && ./%< <CR>
-
-set colorcolumn=110
-highlight ColorColumn ctermbg=darkgray
 setlocal foldmethod=syntax
-
