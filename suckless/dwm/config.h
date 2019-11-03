@@ -16,7 +16,7 @@ static const char col_full[]        = "#eeeeee";
 static const char *colors[][3]      = {
 	/*               fg         bg          border   */
 	[SchemeNorm] = { col_norm,  col_vdark,  col_vdark },
-	[SchemeSel]  = { col_full,  col_vdark,  col_dark},
+	[SchemeSel]  = { col_full,  col_vdark,  col_sel},
 };
 
 /* tagging */
