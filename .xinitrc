@@ -14,11 +14,6 @@ feh --bg-fill /home/jl/Pictures/wallpapers/citylights.jpg
 # Load nvidia settings
 nvidia-settings -l
 
-# Statusbar
-while true; do
-        xsetroot -name "$(echo ^c#689d6a^VOL^d^ $(amixer get Master | if grep -Fq off; then echo MUTED; else amixer get Master | awk '$0~/%/{print $4}' | tail -1 | tr -d '[]'; fi) :: ^c#458588^CPU^d^ $(acpi -t | awk '{print $4}')°C :: ^c#d79921^BAT^d^ $(if grep -Fq "Charging" /sys/class/power_supply/BAT0/status; then echo "+";fi)$(cat /sys/class/power_supply/BAT0/capacity)% :: $(date +"%A %F %R"))        "
-        sleep 1s
-done &
 
 # Autostart programs
 firefox &
@@ -26,6 +21,8 @@ spotify &
 st -e sh -c 'cat TODO; bash' &
 # Start tmux with neomutt and irssi
 st -e sh -c 'tmux new-session -d -s "std" && tmux rename-window -t 0 "MAIL" && tmux send -t std.0 neomutt ENTER && tmux new-window -n IRC irssi && tmux a' &
+# Statusbar
+/path/to/bar.sh &
 
 # Window Manager
 exec dwm
