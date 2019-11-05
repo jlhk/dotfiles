@@ -21,7 +21,10 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = {
+	/* "1", "2", "3", "4", "5", "6", "7", "8", "9" */
+	"●","●","●","●","●","●","●","●", "●"
+};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -60,8 +63,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
-											"-nb", col_vdark, "-nf", col_norm,																										   "-sb", col_dark, "-sf", col_full, NULL  };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_vdark, "-nf",
+									col_norm, "-sb", col_dark, "-sf", col_full, NULL  };
 static const char *termcmd[]  = { "st", NULL };
 static const char *lockcmd[] = { "slock", NULL };
 static const char scratchpadname[] = "scratchpad";
