@@ -32,10 +32,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class          instance    title       tags mask     isfloating   monitor */
-	{ "st-256color",  NULL, 	  NULL, 	  1 << 0, 		0, 			 -1 },
-	{ "Firefox-esr",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Steam", 		  NULL, 	  NULL, 	  1 << 3, 		0, 			 -1 },
-	{ "Vmplayer", 	  NULL, 	  NULL, 	  1 << 5,  		0, 			 -1 },
+	{ "st-256color",  NULL, 	NULL, 	  1 << 0, 		0,	-1 },
+	{ "Firefox-esr",  NULL,		NULL,     1 << 1,       	0,	-1 },
+	{ "Steam", 	  NULL, 	NULL, 	  1 << 3, 		0,	-1 },
+	{ "Vmplayer", 	  NULL, 	NULL, 	  1 << 4,  		0,	-1 },
 };
 
 /* layout(s) */
