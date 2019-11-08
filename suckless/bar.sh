@@ -12,7 +12,7 @@ bstatus() {
 	if amixer get Master | grep -Fq off; then
 		becho "MUTED"
 	else
-		becho "VOL $(amixer get Master | awk '$0~/%/{print $5;exit}' | tr -d '[]')"
+		becho "VOL $(amixer get Master | awk '$0~/%/{print $4;exit}' | tr -d '[]')"
 	fi
 
 	# BATTERY
@@ -25,7 +25,7 @@ bstatus() {
 
 		for b in /sys/class/power_supply/BAT?/capacity; do
 			case "$(cat $b 2>/dev/null)" in
-				(+([0-9]))	bat+=" $(cat $b%)"	;;
+				(+([0-9]))	bat+=" $(cat $b)%"	;;
 			esac
 		done
 		becho "$bat"
