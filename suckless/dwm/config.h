@@ -12,18 +12,19 @@ static const char dmenufont[]       = "Terminus:size=9";
 static const char col_vdark[]       = "#222222";
 static const char col_dark[]        = "#333333";
 static const char col_sel[]         = "#594c34";
-static const char col_norm[]        = "#666666";
+static const char col_norm[]        = "#707070";
 static const char col_full[]        = "#eeeeee";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg          border   */
 	[SchemeNorm] = { col_norm,  col_vdark,  col_vdark },
-	[SchemeSel]  = { col_full,  col_vdark,  col_sel},
+	[SchemeSel]  = { col_full,  col_cyan,	col_cyan},
 };
 
 /* tagging */
 static const char *tags[] = {
-	/* "1", "2", "3", "4", "5", "6", "7", "8", "9" */
-	"●","●","●","●","●","●","●","●", "●"
+	"1", "2", "3", "4", "5", "6", "7", "8", "9"
+	/* "●","●","●","●","●","●","●","●", "●" */
 };
 
 static const Rule rules[] = {
