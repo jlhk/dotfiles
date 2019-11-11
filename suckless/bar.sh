@@ -8,6 +8,9 @@ becho() {
 }
 
 bstatus() {
+	# WIRELESS
+	becho "$(iw dev | grep ssid | awk '{print $2}')"
+
 	# VOLUME
 	if amixer get Master | grep -Fq off; then
 		becho "MUTED"
