@@ -9,7 +9,7 @@ becho() {
 
 bstatus() {
 	# WIRELESS
-	becho "$(iw dev | grep ssid | awk '{print $2}')"
+	becho "$(iw dev | grep ssid | cut -d " " -f2-)"
 
 	# VOLUME
 	if amixer get Master | grep -Fq off; then
