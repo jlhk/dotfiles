@@ -9,7 +9,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Terminus:size=9" };
 static const char dmenufont[]       = "Terminus:size=9";
-static const char col_vdark[]       = "#222222";
+static const char col_vdark[]       = "#282828";
 static const char col_dark[]        = "#333333";
 static const char col_sel[]         = "#594c34";
 static const char col_norm[]        = "#707070";
