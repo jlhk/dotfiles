@@ -7,6 +7,9 @@ xset s off -dpms
 xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 xrandr --output HDMI-0 --left-of DVI-D-0 --rate 75
 xinput set-prop 8 153 1.00000, 0.000000, 0.000000, 0.000000, 1.00000, 0.000000, 0.000000, 0.000000, 1.000000
+setxkbmap se
+# lanuch polkit auth agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Background
 feh --bg-fill /home/jl/Pictures/wallpapers/citylights.jpg
